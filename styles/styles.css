@@ -1,0 +1,251 @@
+:root {
+  --gray-900: hsla(228, 15%, 38%, 1);
+  --white: hsla(0, 0%, 94%, 1);
+  --white-true: white;
+
+  --text-instruction: hsla(258, 14%, 77%, 1);
+  --text-instruction-hover: rgb(88, 94, 96);
+  --text-label: hsla(258, 9%, 32%, 1);
+  --text-title: hsla(228, 15%, 38%, 1);
+
+  --bg-body: hsl(0, 0%, 90%);
+  --bg-inputs: hsl(240, 25%, 98%);
+  --bg-button: hsl(348, 100%, 66%);
+  --bg-button-hover: hsl(340, 100%, 58%);
+  --input-valid: rgba(0, 253, 46, 0.68);
+
+  --border-color-input: hsl(240, 25%, 92%);
+
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.border {
+  margin-top: 0.8rem;
+  border-top: 1px solid var(--border-color-input);
+}
+
+input {
+  outline: none;
+}
+
+input:invalid {
+  /* outline: 1px solid var(--bg-button); */
+  box-shadow: 0 0 1px 2px var(--bg-button);
+}
+
+input:valid {
+  box-shadow: 0 0 1px 1.1px var(--input-valid);
+}
+
+input:focus:invalid {
+  background: var(--bg-button);
+}
+
+input:focus:valid {
+  background: var(--input-valid);
+}
+
+body,
+input {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+body {
+  background: var(--bg-body);
+}
+
+body::before {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  height: 43.6rem;
+  width: 100%;
+  background: var(--gray-900);
+}
+
+.page {
+  width: 78.2rem;
+  margin: 0 auto;
+  padding-inline: 2rem;
+}
+
+#header {
+  margin-top: 14rem;
+  margin-bottom: 6rem;
+  width: 40rem;
+
+  color: var(--white-true);
+}
+
+#header h1 {
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.8rem;
+
+  margin-bottom: 1.8rem;
+}
+
+#header p {
+  font-size: 2rem;
+}
+
+form {
+  padding: 6.4rem;
+  background: var(--white-true);
+  border-radius: 20px 20px 0px 0px;
+}
+
+form fieldset {
+  border: 0;
+}
+
+form legend {
+  font-family: 'Staatliches';
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 34px;
+  color: var(--gray-900);
+}
+
+/* form legend:nth-of-type(1) {
+ margin-bottom: 1.6rem; 
+} */
+
+form .input-wrapper + .input-wrapper {
+  margin-top: 3.2rem;
+}
+
+form legend + .input-wrapper {
+  padding-top: 3.2rem;
+}
+
+form legend + .wrapper-column-2 {
+  padding-top: 3.6rem;
+
+  display: flex;
+  gap: 2rem;
+}
+
+form .wrapper-column-2.input-wrapper {
+  margin-top: 1.6rem;
+}
+
+form .wrapper-column-2 div,
+form .wrapper-column-2 div input {
+  width: 100%;
+}
+
+form .label {
+  display: block;
+  margin-bottom: 0.8rem;
+
+  font-size: 1.4rem;
+  line-height: 24px;
+  color: var(--text-label);
+}
+
+form .label span {
+  font-size: 1.4rem;
+  line-height: 24px;
+  color: var(--text-instruction);
+}
+
+form .label span:hover {
+  color: var(--text-instruction-hover);
+}
+
+form input {
+  height: 5.6rem;
+  width: 100%;
+  background: var(--bg-inputs);
+  border: 1px solid var(--border-color-input);
+  border-radius: 8px;
+  padding: 0 1rem;
+}
+
+form fieldset.mentor-information {
+  margin: 3rem 0 3.2rem;
+}
+
+.input-wrapper .title {
+  font-family: 'Staatliches';
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 34px;
+  color: var(--text-title);
+}
+
+.wrapper-column-3 {
+  margin-top: 0.8rem;
+  display: flex;
+}
+
+.wrapper-column-3 .column-1 {
+  width: 30rem;
+}
+
+.wrapper-column-3 .column-2 {
+  margin: 0 1rem 0 3.2rem;
+}
+
+.wrapper-column-3 .column-2,
+.wrapper-column-3 .column-3 {
+  flex: 1;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.time-horas {
+  text-align: center;
+}
+
+#footer {
+  margin-bottom: 36rem;
+  background: var(--gray-900);
+  border-radius: 0px 0px 20px 20px;
+  padding: 5.3rem 7.1rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#footer button {
+  cursor: pointer;
+
+  padding: 1.5rem 28rem;
+  background: var(--bg-button);
+  border: 0;
+  border-radius: 20px;
+
+  font-family: 'Staatliches';
+
+  font-size: 2rem;
+  line-height: 26px;
+
+  color: var(--white-true);
+}
+
+#footer button:hover {
+  background: var(--bg-button-hover);
+}
+/* font-family: 'Staatliches', cursive; */
